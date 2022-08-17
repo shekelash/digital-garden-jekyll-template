@@ -3,6 +3,9 @@ layout: page
 title: Archive
 permalink: /archive
 ---
+
+# Archive
+
 <ul class="archive">
 {% for note in site.notes %}
   <li>
