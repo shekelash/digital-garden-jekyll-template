@@ -4,6 +4,17 @@ title: About
 permalink: /about
 ---
 
-*This is an about page.*
+### About
 
-Feel free to tell the world about what you love! 😍
+这里是词条小说《Bet Hayyim | 永生之地》的发布站点。
+<br>
+网站建设中，小说还没写，但依然欢迎探索。
+
+---
+
+### Credits
+
+双链笔记软件 [obsidian](https://obsidian.md/) 令词条小说成为可能。
+<br>
+优秀的Jekyll发布方案由 [Maxime Vaillancourt](https://digital-garden-jekyll-template.netlify.app) 提供，模板来源于 [Megumi Tanaka](https://garden.megu.space/) 。
+
