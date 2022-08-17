@@ -26,9 +26,9 @@ layout: default
         <div style="font-size: 0.9em">
          <span class="summary">
           {% if backlink.summary %}
-            {{ backlink.summary | strip_html | truncatewords:1 }}
+            {{ backlink.summary | strip_html | truncate: 20, "..." }}
           {% else %}
-            {{ backlink.excerpt | strip_html | truncatewords:1 }}
+            {{ backlink.excerpt | strip_html | truncate: 20, "..." }}
           {% endif %}
          </span>
         </div>
