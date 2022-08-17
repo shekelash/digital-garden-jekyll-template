@@ -31,7 +31,6 @@ time {
 
 footer {
   margin: 2em 0;
-
   color: mix($color-text, white, 80%);
   padding-top: 1em;
 }
@@ -143,4 +142,70 @@ code {
 .invalid-link-brackets {
   color: #ccc;
   cursor: help;
+}
+
+
+/* Article */
+header, .archive span {
+  font-feature-settings: "ss01"1, "zero"1, "case"1;
+  font-variant-numeric: slashed-zero;
+}
+
+header p {
+  color: var(--text-color-faded);
+  font-size: 0.5rem;
+  margin-top: 0;
+  padding-bottom: 2em;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px
+}
+
+blockquote {
+  padding: 1.5em;
+  margin: 0;
+  font-size: 0.88em;
+  background: var(--callout-background);
+  border-radius: 4px
+}
+
+blockquote p {
+  margin: 0
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  margin: 1.5em 0;
+  /* background: #d9d9d9 */
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+
+/* Archive Page */
+ul.archive, .archive li {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0
+}
+
+.archive li {
+  margin: 1em 0 1.25em
+}
+
+.archive p {
+  margin-top: 0
+}
+
+.archive span {
+  opacity: 0.6
 }
