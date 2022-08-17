@@ -12,9 +12,9 @@ permalink: /archive
     <p>
         <span class="summary">
         {% if note.summary %}
-          {{ note.summary | strip_html | truncate: 60, "..." }}
+          {{ note.summary | strip_html | truncate: 50, "..." }}
         {% else %}
-          {{ note.excerpt | strip_html | truncate: 60, "..." }}
+          {{ note.excerpt | strip_html | truncate: 50, "..." }}
         {% endif %}
        </span>
     </P>
