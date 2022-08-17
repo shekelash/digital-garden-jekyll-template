@@ -14,7 +14,7 @@ permalink: /about
 
 ### Credits
 
-双链笔记软件 [obsidian](https://obsidian.md/) 令词条小说成为可能。
+双链笔记软件 [obsidian](https://obsidian.md/) 。
 <br>
-优秀的Jekyll发布方案由 [Maxime Vaillancourt](https://digital-garden-jekyll-template.netlify.app) 提供，模板来源于 [Megumi Tanaka](https://garden.megu.space/) 。
+优秀的Jekyll发布方案由 [Maxime Vaillancourt](https://digital-garden-jekyll-template.netlify.app) 提供，部分模板代码参考自 [Megumi Tanaka](https://garden.megu.space/) 。
 
