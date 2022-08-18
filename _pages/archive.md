@@ -11,7 +11,7 @@ permalink: /archive
   <li>
     <a href="{{ note.url }}{%- if site.use_html_extension -%}.html{%- endif -%}" class="internal-link">
     <b>{{note.title}}</b></a>{% if note.category != null %} in {{note.category}}{% endif %} 
-    <span><time datetime="({{ note.last_modified_at | date: "%B %Y" }})></tame></span>
+    <span>({{ note.last_modified_at | date: "%B %Y" }})</span>
     <p>
         <span class="summary">
         {% if note.summary %}
