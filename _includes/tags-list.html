@@ -1,47 +1,19 @@
-<!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
-<!-- With added pipe to handle lack of sort_natural -->
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}|{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-<!-- site_tags: {{ site_tags }} -->
-{% assign tag_words = site_tags | split:',' | sort %}
-<!-- tag_words: {{ tag_words }} -->
+{% case site.tag_archive.type %}
+  {% when "liquid" %}
+    {% assign path_type = "#" %}
+  {% when "jekyll-archives" %}
+    {% assign path_type = nil %}
+{% endcase %}
 
-<div id="tags-page">
-  <div class="tags-list" style="padding-left:1.6em">
-    {% for tag_pair in tag_words %}
-    {% assign tag = tag_pair | split:'|' | last %}
-    <a href="#{{ tag | slugify }}" class="tag-link">
-      <span class="tag-name">{{ tag }}</span>
-      <span class="tag-count">[{{ site.tags[tag] | size }}]</span>
-    </a>,&nbsp;&nbsp;
+{% if site.tag_archive.path %}
+  {% assign tags_sorted = note.tags | sort_natural %}
+
+  <p class="note__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
+    <span itemprop="keywords">
+    {% for tag_word in tags_sorted %}
+      <a href="{{ tag_word | slugify | prepend: path_type | prepend: site.tag_archive.path | relative_url }}" class="note__taxonomy-item p-category" rel="tag">{{ tag_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
-  </div>
-
- <br>
-
-  <div class="pages-by-tag">
-    {% for tag_pair in tag_words %}
-    {% assign tag = tag_pair | split:'|' | last %}
-    <div id="{{ tag | slugify }}" class="pages-for-tag">
-      <h4>{{ tag }}</h4>
-      <ul class="pages-list">
-        {% for page in site.tags[tag] %}
-          <li>
-              <a href="{{ page.url | relative_url }}" style="text-decoration:none;">
-                {{ page.title }}&nbsp;
-                [{% for tags in page.tags -%}
-                   {% capture tags_name %}{{ tags }}{% endcapture %}
-                   {{ tags_name }}
-                {%- endfor %}
-
-                {% for tag in page.tags -%}
-                   {% capture tag_name %}{{ tag }}{% endcapture %}
-                   {{ tag_name }}, 
-                {%- endfor %}&nbsp;]
-              </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+    </span>
+  </p>
+{% endif %}
