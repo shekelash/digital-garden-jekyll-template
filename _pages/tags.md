@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tags
-permalink: /archive
+permalink: /tag
 ---
 
 <!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
