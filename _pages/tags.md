@@ -26,18 +26,18 @@ permalink: /tags
 
   <hr/>
 
-  <div class="posts-by-tag">
+  <div class="notes-by-tag">
     {% for tag_pair in tag_words %}
     {% assign tag = tag_pair | split:'|' | last %}
-    <div id="{{ tag | slugify }}" class="posts-for-tag">
+    <div id="{{ tag | slugify }}" class="notes-for-tag">
       <h2>{{ tag }}</h2>
-      <ul class="posts-list">
+      <ul class="notes-list">
         {% for post in site.tags[tag] %}
           <li>
             <h3>
-              <a href="{{ post.url | relative_url }}">
-                {{ post.title }}
-                <small>{{ post.date | date_to_string }}</small>
+              <a href="{{ note.url | relative_url }}">
+                {{ note.title }}
+                <small>{{ note.date | date_to_string }}</small>
               </a>
             </h3>
           </li>
