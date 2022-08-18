@@ -4,15 +4,46 @@ title: Tags
 permalink: /tags
 ---
 
+<!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
+<!-- With added pipe to handle lack of sort_natural -->
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}|{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+<!-- site_tags: {{ site_tags }} -->
+{% assign tag_words = site_tags | split:',' | sort %}
+<!-- tag_words: {{ tag_words }} -->
+
 # Tags
 
-<ul class="tags">
-{% for tag in site.tags %}
-  <h3>{{ tag[0] }}</h3>
-  <ul>
-    {% for note in tag[1] %}
-      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+<div id="tags-page">
+  <div class="tags-list">
+    {% for tag_pair in tag_words %}
+    {% assign tag = tag_pair | split:'|' | last %}
+    <a href="#{{ tag | slugify }}" class="tag-link">
+      <span class="tag-name">{{ tag }}</span>
+      <span class="tag-count">{{ site.tags[tag] | size }}</span>
+    </a>
     {% endfor %}
-  </ul>
-{% endfor %}
-</ul>
+  </div>
+
+  <hr/>
+
+  <div class="posts-by-tag">
+    {% for tag_pair in tag_words %}
+    {% assign tag = tag_pair | split:'|' | last %}
+    <div id="{{ tag | slugify }}" class="posts-for-tag">
+      <h2>{{ tag }}</h2>
+      <ul class="posts-list">
+        {% for post in site.tags[tag] %}
+          <li>
+            <h3>
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title }}
+                <small>{{ post.date | date_to_string }}</small>
+              </a>
+            </h3>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
