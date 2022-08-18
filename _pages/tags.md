@@ -4,6 +4,11 @@ title: Tags
 permalink: /tags
 ---
 
+              <a href="{{ note.url | relative_url }}">
+                {{ note.title }}
+                <small>{{ note.date | date_to_string }}</small>
+              </a>
+
 <!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
 <!-- With added pipe to handle lack of sort_natural -->
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}|{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
