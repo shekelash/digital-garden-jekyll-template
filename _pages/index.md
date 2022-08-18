@@ -4,6 +4,11 @@ title: Home
 id: home
 permalink: /
 ---
+<style>
+  .wrapper {
+    max-width: 46em;
+  }
+</style>
 
   这片土地还没有名字的时候，第一个被它吸引而来的是异界位面的上位者。
 <br>
