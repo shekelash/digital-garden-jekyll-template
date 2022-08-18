@@ -32,7 +32,7 @@ permalink: /tags
     <div id="{{ tag | slugify }}" class="notes-for-tag">
       <h2>{{ tag }}</h2>
       <ul class="notes-list">
-        {% for post in site.tags[tag] %}
+        {% for note in site.tags[tag] %}
           <li>
             <h3>
               <a href="{{ note.url | relative_url }}">
