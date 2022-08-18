@@ -1,5 +1,0 @@
-{%- for note in site.tags[include.taxonomy] -%}
-  {%- unless note.hidden -%}
-    {% include archive-single.html %}
-  {%- endunless -%}
-{%- endfor -%}
