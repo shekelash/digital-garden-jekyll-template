@@ -4,4 +4,13 @@ title: Tags
 permalink: /tags
 ---
 
- {{ note.title }}{{ note.date | date_to_string }} {{ note.tag }}
+  <div class="tags-list">
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+  </div>
