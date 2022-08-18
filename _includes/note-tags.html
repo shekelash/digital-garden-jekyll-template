@@ -8,8 +8,8 @@
   {% endif %}
 {% endfor %}
 
-<div class="post-tags">
-  {% for tag in include.post.tags %}
+<div class="note-tags">
+  {% for tag in include.note.tags %}
     {% if tags_page %}
     <a href="{{ tags_page.url | relative_url }}#{{ tag | slugify }}">
     {% else %}<span>{% endif %}
