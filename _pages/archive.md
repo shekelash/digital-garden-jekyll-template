@@ -10,7 +10,7 @@ permalink: /archive
 {% for note in site.notes %}
   <li>
     <a href="{{ note.url }}{%- if site.use_html_extension -%}.html{%- endif -%}" class="internal-link">
-    <b>{{note.title}}</b></a>{% if note.tag != null %} in {{note.category}}{% endif %} 
+    <b>{{note.title}}</b></a>{% if note.tag != null %} in {{note.tag}}{% endif %} 
     <span>({{ note.last_modified_at | date: "%B %Y" }})</span>
     <p>
         <span class="summary">
