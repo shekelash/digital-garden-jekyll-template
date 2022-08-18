@@ -18,22 +18,22 @@
 
  <br>
 
-  <div class="notes-by-tag">
+  <div class="pages-by-tag">
     {% for tag_pair in tag_words %}
     {% assign tag = tag_pair | split:'|' | last %}
-    <div id="{{ tag | slugify }}" class="notes-for-tag">
+    <div id="{{ tag | slugify }}" class="pages-for-tag">
       <h4>{{ tag }}</h4>
-      <ul class="notes-list">
-        {% for note in site.tags[tag] %}
+      <ul class="pages-list">
+        {% for page in site.tags[tag] %}
           <li>
-              <a href="{{ note.url | relative_url }}" style="text-decoration:none;">
-                {{ note.title }}&nbsp;
-                [{% for tags in note.tags -%}
+              <a href="{{ page.url | relative_url }}" style="text-decoration:none;">
+                {{ page.title }}&nbsp;
+                [{% for tags in page.tags -%}
                    {% capture tags_name %}{{ tags }}{% endcapture %}
                    {{ tags_name }}
                 {%- endfor %}
 
-                {% for tag in note.tags -%}
+                {% for tag in page.tags -%}
                    {% capture tag_name %}{{ tag }}{% endcapture %}
                    {{ tag_name }}, 
                 {%- endfor %}&nbsp;]
