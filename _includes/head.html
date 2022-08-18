@@ -12,7 +12,17 @@
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
 
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
-
+  
+  {% if page.favicon != null %}
+  <!-- Emoji Favicon https://css-tricks.com/emojis-as-favicons/ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ page.favicon }}</text></svg>">
+  {% elsif site.favicon != null %}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.favicon }}</text></svg>">
+  {% else %}
+  <!-- Add fallback favicons here for browsers that don't support SVG -->
+  <link rel=icon href="/favicon.png" sizes="120x120" type="image/png">
+  {% endif %}
+  
   {% if page.excerpt %}
   <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"/>
   {% else %}
