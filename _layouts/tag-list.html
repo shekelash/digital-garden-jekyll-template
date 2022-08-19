@@ -3,7 +3,6 @@ layout: default
 metasomething:
 metaanotherthing:
 ---
-7
   <div>
     <h1>{{ page.title }}</h1>
   </div>
@@ -13,7 +12,7 @@ metaanotherthing:
     {% for note in site.notes %}
       <li>
         {% if note.tags contains t %}
-          <a href="{{ note.url }}" class="internal-link">{{note.title}}</a>
+          <a href="{{ note.url }}" class="internal-link"><b>{{note.title}}</b></a>
           <span>Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
