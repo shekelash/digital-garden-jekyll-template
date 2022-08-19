@@ -3,7 +3,7 @@ layout: default
 metasomething:
 metaanotherthing:
 ---
-5
+6
   <div>
     <h1>{{ page.title }}</h1>
   </div>
@@ -14,8 +14,15 @@ metaanotherthing:
       <li>
         {% if post.tags contains t %}
           <a href="{{ post.url }}" title="{{ post.title }}" class="internal-link">{{post.title}}</a>
-          <p>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</p>
-          {% endif %}
+          <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
+          <p>
+           {% if post.summary %}
+           {{ post.summary | strip_html | truncate: 50, "..." }}
+           {% else %}
+           {{ post.excerpt | strip_html | truncate: 50, "..." }}
+           {% endif %}
+          </P>
+        {% endif %}
       </li>
-        {% endfor %}
+    {% endfor %}
 </ul>
