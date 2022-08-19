@@ -6,7 +6,7 @@ permalink: /archive
 
 <style>
 	#search-container {
-	    max-width: 80%;
+	    max-width: 30%;
 	}
 
 	input[type=text] {
