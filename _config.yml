@@ -52,7 +52,7 @@ defaults:
 # Tipue search settings
 tipue_search:
   include:
-    posts: true
+    notes: true
   exclude:
     files: [search.html, _apples/gragg.md, _oranges/valencia.md]
     tags: [tag1, tag2]
