@@ -9,7 +9,7 @@ metaanotherthing:
   <h1>{{ page.title }}</h1>
 </div>
 
-<div>
+<div id="notes-entry-container">
   
 <ul class="archive">
   {% assign t = page.title | downcase %}
@@ -20,9 +20,9 @@ metaanotherthing:
           <span>Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
-           {{ note.summary | strip_html | truncate: 30, "..." }}
+           {{ note.summary | strip_html | truncate: 40, "..." }}
            {% else %}
-           {{ note.excerpt | strip_html | truncate: 30, "..." }}
+           {{ note.excerpt | strip_html | truncate: 40, "..." }}
            {% endif %}
           </P>
         {% endif %}
@@ -60,3 +60,12 @@ metaanotherthing:
     </side>
   </div>
 </article>
+
+<hr>
+
+<section>
+  {%- if site.show_notes_graph -%}
+    <p>Here are all the notes in this garden, along with their links, visualized as a graph.</p>
+    {% include notes-graph.html %}
+  {%- endif -%}
+</section>
