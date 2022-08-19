@@ -6,11 +6,11 @@ permalink: /archive
 
 <style>
 	#search-container {
-	    max-width: 100%;
+	    max-width: 46em;
 	}
 
 	input[type=text] {
-		font-size: normal;
+            font-size: normal;
 	    outline: none;
 	    padding: 1rem;
 		background: rgb(236, 237, 238);
@@ -32,21 +32,21 @@ permalink: /archive
 </div>
 
 <!-- Script pointing to search-script.js -->
-<script src="/assets/js/simple-jekyll-search.min.js" type="text/javascript"></script>
+    <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
 
 <!-- Configuration -->
-<script type="text/javascript">
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('results-container'),
-  json: '/search.json',
-  searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-  noResultsText: 'No results found',
-  limit: 10,
-  fuzzy: false,
-  exclude: ['Welcome']
-})
-</script>
+    <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/search.json',
+        searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
     
     
 
