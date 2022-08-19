@@ -12,8 +12,8 @@ metaanotherthing:
   <div class="archive">
       {% assign t = page.title | downcase %}
         {% for post in site.notes %}
+         <li>
           {% if post.tags contains t %}
-          <li>
           <a href="{{ post.url }}" title="{{ post.title }}">{{post.title}}</a>
            <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
           {% endif %}
