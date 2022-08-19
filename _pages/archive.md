@@ -6,11 +6,11 @@ permalink: /archive
 
 <style>
 	#search-container {
-	    max-width: 30%;
+	    max-width: 60%;
 	}
 
 	input[type=text] {
-            font-size: normal;
+		font-size: normal;
 	    outline: none;
 	    padding: 1rem;
 		background: rgb(236, 237, 238);
