@@ -6,8 +6,6 @@ permalink: /archive
 
 # Archive
 
-  {% include seach.html %}
-
 <ul class="archive">
 {% for note in site.notes %}
   <li>
