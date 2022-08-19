@@ -18,9 +18,9 @@ metaanotherthing:
           <span>Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
-           {{ note.summary | strip_html | truncate: 50, "..." }}
+           {{ note.summary | strip_html | truncate: 30, "..." }}
            {% else %}
-           {{ note.excerpt | strip_html | truncate: 50, "..." }}
+           {{ note.excerpt | strip_html | truncate: 30, "..." }}
            {% endif %}
           </P>
         {% endif %}
