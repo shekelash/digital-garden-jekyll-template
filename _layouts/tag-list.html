@@ -14,16 +14,10 @@ metaanotherthing:
       {% assign t = page.title | downcase %}
         {% for post in site.notes %}
           {% if post.tags contains t %}
-          <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{post.title}}</a>
+          <a href="{{ post.url }}" title="{{ post.title }}">{{post.title}}</a>
           <p>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</p>
           {% endif %}
         {% endfor %}
   </div>
 
 </article>
-
-<hr>
-
-
-<a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{post.title}}</a>
-<p>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</p>
