@@ -22,7 +22,7 @@ metaanotherthing:
         {% for post in site.notes %}
           {% if post.tags contains t %}
           <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{post.title}}</a>
-          <p>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</p>
+           <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
           {% endif %}
         {% endfor %}
       </li>
