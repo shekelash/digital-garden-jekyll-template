@@ -1,0 +1,8 @@
+---
+title: tag
+layout: page
+--- 
+
+{% for note in site.notes %}
+<a href="/{{ note.tag }}" class="internal-link">{{note.tag}}</a>{% endif %}
+{% endfor %}
