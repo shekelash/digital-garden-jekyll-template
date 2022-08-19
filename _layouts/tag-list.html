@@ -9,18 +9,42 @@ metaanotherthing:
     <h1>{{ page.title }}</h1>
   </div>
 
-  <div id="notes-entry-container" class="tag-list">
+  <div class="tag-list">
 
       {% assign t = page.title | downcase %}
-
         {% for post in site.notes %}
           {% if post.tags contains t %}
           <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{post.title}}</a>
           <p>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</p>
           {% endif %}
         {% endfor %}
-
       </div>
-
-
 </article>
+
+---
+
+  <div>
+    <h1>{{ page.title }}</h1>
+  </div>
+
+<ul class="archive">
+      {% assign t = page.title | downcase %}
+        {% for post in site.notes %}
+          {% if post.tags contains t %}
+  <li>
+    <a href="{{ post.url }}{%- if site.use_html_extension -%}.html{%- endif -%}" class="internal-link">
+    {{post.title}}</a>{% if n、post.category != null %} in {{post.category}}{% endif %} 
+    <span>({{ post.last_modified_at | date: "%B %Y" }})</span>
+    <p>
+        {% if note.summary %}
+          {{ post.summary | strip_html | truncate: 50, "..." }}
+        {% else %}
+          {{ post.excerpt | strip_html | truncate: 50, "..." }}
+        {% endif %}
+    </P>
+  </li>
+{% endfor %}
+</ul>
+
+<section>
+  {%- if site.show_notes_graph -%}<p>Here are all the notes in this garden, along with their links, visualized as a graph.</p>{% include notes-graph.html %}{%- endif -%}</section>
