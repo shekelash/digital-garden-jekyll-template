@@ -1,16 +1,11 @@
 ---
 layout: default
 ---
-
-
-  <h1>Tag #{{note.tag}}</h1>
-    <ul>
-      {% assign t = page.title | downcase %}
-      {% for note in site.notes %}
-      {% if note.tags contains page.tag %}
-      <li><a href="{{ note.url }}">{{ note.title }}</a>
-        {{ note.date | date: "%m-%d-%Y" }}</li>
-      {% endif %}
-      {% endfor %}
-    </ul>
-	
+123
+<h1>{{ page.title }}</h1>
+{% assign tags = site.tags | sort %}
+<ul>
+{% for tag in tags %}
+ <li><a href="/{{ tag | first | slugify }}">{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }}){% unless forloop.last %}, {% endunless %}</a></li>
+{% endfor %}
+</ul>
