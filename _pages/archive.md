@@ -13,13 +13,11 @@ permalink: /archive
     {{note.title}}</a>{% if note.category != null %} in {{note.category}}{% endif %} 
     <span>({{ note.last_modified_at | date: "%B %Y" }})</span>
     <p>
-        <span class="summary">
         {% if note.summary %}
           {{ note.summary | strip_html | truncate: 50, "..." }}
         {% else %}
           {{ note.excerpt | strip_html | truncate: 50, "..." }}
         {% endif %}
-       </span>
     </P>
   </li>
 {% endfor %}
