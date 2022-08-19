@@ -13,7 +13,7 @@ metaanotherthing:
     {% for post in site.notes %}
       <li>
         {% if post.tags contains t %}
-          <a href="{{ post.url }}" title="{{ post.title }}" class="internal-link">{{post.title}}</a>
+          <a href="{{ post.url }}" class="internal-link">{{post.title}}</a>
           <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if post.summary %}
