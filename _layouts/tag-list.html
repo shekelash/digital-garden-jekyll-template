@@ -2,13 +2,6 @@
 layout: default
 ---
 
-<!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
-<!-- With added pipe to handle lack of sort_natural -->
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}|{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-<!-- site_tags: {{ site_tags }} -->
-{% assign tag_words = site_tags | split:',' | sort %}
-<!-- tag_words: {{ tag_words }} -->
-
 <article>
 <div>
   <h1>{{ page.title }}</h1>
@@ -19,16 +12,10 @@ layout: default
 <ul class="archive">
   {% assign t = page.title | downcase %}
     {% for note in site.notes %}
-    {% for tag in note.tags %}
-    {% for tag_pair in tag_words %}
       <li>
         {% if note.tags contains t %}
-          <a href="{{ note.url }}" class="internal-link"><b>{{note.title | slugify }}</b></a>
-          <span>{% assign tag = tag_pair | split:'|' | last %}
-              <a href="/{{ note.tag | slugify }}" class="internal-link">{{note.tag}}</a>
-              {% unless forloop.last %}, 
-              {% endunless %}
-            {% endfor %}
+          <a href="{{ note.url }}" class="internal-link"><b>{{note.title}}</b></a>
+          <span>{% if note.tag != null %} in  <a href="/{{ note.tag }}" class="internal-link">{{note.tag}}</a>{% endif %} | 
           Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
@@ -39,8 +26,6 @@ layout: default
           </P>
         {% endif %}
       </li>
-    {% endfor %}
-    {% endfor %}
     {% endfor %}
 </ul>
 
