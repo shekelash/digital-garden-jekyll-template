@@ -6,7 +6,7 @@ permalink: /archive
 
 <style>
 	#search-container {
-	    max-width: 46em;
+	    max-width: 80%;
 	}
 
 	input[type=text] {
@@ -32,21 +32,21 @@ permalink: /archive
 </div>
 
 <!-- Script pointing to search-script.js -->
-    <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+<script src="/search.js" type="text/javascript"></script>
 
 <!-- Configuration -->
-    <script>
-      window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: false,
-        exclude: ['Welcome']
-      })
-    </script>
+<script type="text/javascript">
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json',
+  searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+  noResultsText: 'No results found',
+  limit: 10,
+  fuzzy: false,
+  exclude: ['Welcome']
+})
+</script>
     
     
 
