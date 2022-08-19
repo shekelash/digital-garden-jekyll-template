@@ -147,7 +147,8 @@ code {
 
 
 /* Archive Page */
-ul.archive, .archive li {
+ul.archive, tag-list
+ .archive li {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0
