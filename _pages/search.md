@@ -1,3 +1,8 @@
+---
+layout: page
+title: Search
+---
+
 <style>
 	#search-container {
 	    max-width: 100%;
