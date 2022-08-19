@@ -11,7 +11,7 @@ metaanotherthing:
 
   <div id="notes-entry-container">
 
-      {% assign t = page.title | downcase %}
+
         {% for post in site.notes %}
           {% if post.tags contains t %}
           <a href="{{ post.url }}" title="{{ post.title }}">{{post.title}}</a>
