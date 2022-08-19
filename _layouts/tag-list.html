@@ -19,18 +19,16 @@ layout: default
 <ul class="archive">
   {% assign t = page.title | downcase %}
     {% for note in site.notes %}
+    {% for tag in note.tags %}
+    {% for tag_pair in tag_words %}
       <li>
         {% if note.tags contains t %}
-          <a href="{{ note.url }}" class="internal-link"><b>{{note.title}}</b></a>
-          <span>{% if note.tag != null %} in  
-            {% for tag in note.tags %}
-                {% for tag_pair in tag_words %}
-                {% assign tag = tag_pair | split:'|' | last %}
-                  <a href="/{{ note.tag | slugify }}" class="internal-link">{{note.tag}}</a>
+          <a href="{{ note.url }}" class="internal-link"><b>{{note.title | slugify }}</b></a>
+          <span>{% assign tag = tag_pair | split:'|' | last %}
+              <a href="/{{ note.tag | slugify }}" class="internal-link">{{note.tag}}</a>
               {% unless forloop.last %}, 
-             {% endunless %}
+              {% endunless %}
             {% endfor %}
-            {% endif %} | 
           Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
@@ -41,6 +39,8 @@ layout: default
           </P>
         {% endif %}
       </li>
+    {% endfor %}
+    {% endfor %}
     {% endfor %}
 </ul>
 
