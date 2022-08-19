@@ -24,8 +24,10 @@ layout: default
           <a href="{{ note.url }}" class="internal-link"><b>{{note.title}}</b></a>
           <span>{% if note.tag != null %} in  
             {% for tag in note.tags %}
-            <a href="/{{ note.tag }}" class="internal-link">{{note.tag}}</a>
-             {% unless forloop.last %}, 
+                {% for tag_pair in tag_words %}
+                {% assign tag = tag_pair | split:'|' | last %}
+                  <a href="/{{ note.tag | slugify }}" class="internal-link">{{note.tag}}</a>
+              {% unless forloop.last %}, 
              {% endunless %}
             {% endfor %}
             {% endif %} | 
