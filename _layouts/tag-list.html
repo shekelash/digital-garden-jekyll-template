@@ -17,7 +17,8 @@ metaanotherthing:
       <li>
         {% if note.tags contains t %}
           <a href="{{ note.url }}" class="internal-link"><b>{{note.title}}</b></a>
-          <span>Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
+          <span>{% if note.tag != null %} in {{note.tag}}{% endif %} | 
+          Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
            {% if note.summary %}
            {{ note.summary | strip_html | truncate: 40, "..." }}
