@@ -13,7 +13,7 @@ title: Search
     <script src="{{ site.baseurl }}/assets/js/simple-jekyll-search.min.js"></script>
 
 <!-- Configuration -->
-    <script>
+   <ul class="archive">
       window.simpleJekyllSearch = new SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
@@ -24,4 +24,4 @@ title: Search
         fuzzy: false,
         exclude: ['Welcome']
       })
-    </script>
+    </ul>
