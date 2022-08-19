@@ -21,16 +21,16 @@ metaanotherthing:
 
       {% assign t = page.title %}
       <h3>Feeds</h3>
-        {% for post in site.feeds %}
-          {% if post.tags contains t %}
-            <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">&#129716;</a>
+        {% for note in site.feeds %}
+          {% if note.tags contains t %}
+            <a href="{{ note.url }}" target="_blank" title="{{ note.title }}">&#129716;</a>
           {% endif %}
         {% endfor %}
 
       <h3>Notes</h3>
         {% for post in site.notes %}
-          {% if post.tags contains t %}
-            <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">&#129716;</a>
+          {% if note.tags contains t %}
+            <a href="{{ note.url }}" target="_blank" title="{{ note.title }}">&#129716;</a>
           {% endif %}
         {% endfor %}
 
