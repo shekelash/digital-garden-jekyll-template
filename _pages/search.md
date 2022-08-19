@@ -3,17 +3,16 @@ layout: page
 title: Search
 ---
 
-<!-- Html Elements for Search -->
-<div id="search-container">
-<input type="text" id="search-input" placeholder="Search...">
-<ol id="results-container"></ol>
-</div>
 
-<!-- Script pointing to search-script.js -->
-    <script src="{{ site.baseurl }}/assets/js/simple-jekyll-search.min.js"></script>
+    <div id="search-demo-container">
+      <input type="search" id="search-input" placeholder="search...">
+      <ul id="results-container"></ul>
+    </div>
 
-<!-- Configuration -->
-   <ul class="archive">
+
+    <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+
+    <script>
       window.simpleJekyllSearch = new SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
@@ -24,4 +23,5 @@ title: Search
         fuzzy: false,
         exclude: ['Welcome']
       })
-    </ul>
+    </script>
+
