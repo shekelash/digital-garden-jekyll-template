@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
-123
-<h1>{{ page.title }}</h1>
-{% assign tags = site.tags | sort %}
-<ul>
-{% for tag in tags %}
- <li><a href="/{{ tag | first | slugify }}">{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }}){% unless forloop.last %}, {% endunless %}</a></li>
-{% endfor %}
-</ul>
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}|{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+
+    {% for tag_pair in tag_words %}
+    {% assign tag = tag_pair | split:'|' | last %}
+    <a href="#{{ tag | slugify }}">
+     {{ tag }}
+     [{{ site.tags[tag] | size }}]
+    </a>,&nbsp;&nbsp;
+    {% endfor %}
+
