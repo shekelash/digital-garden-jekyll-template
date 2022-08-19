@@ -52,6 +52,6 @@ defaults:
 # Tipue search settings
 tipue_search:
   include:
-    collections: [_notes]
+    collections: [notes]
   exclude:
     files: [search.html, _apples/gragg.md, _oranges/valencia.md]
