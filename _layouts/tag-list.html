@@ -3,23 +3,23 @@ layout: default
 metasomething:
 metaanotherthing:
 ---
-6
+7
   <div>
     <h1>{{ page.title }}</h1>
   </div>
 
 <ul class="archive">
   {% assign t = page.title | downcase %}
-    {% for post in site.notes %}
+    {% for note in site.notes %}
       <li>
-        {% if post.tags contains t %}
-          <a href="{{ post.url }}" class="internal-link">{{post.title}}</a>
-          <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
+        {% if note.tags contains t %}
+          <a href="{{ note.url }}" class="internal-link">{{note.title}}</a>
+          <span>Last updated on {{ note.last_modified_at | date: "%B %-d, %Y" }}</span>
           <p>
-           {% if post.summary %}
-           {{ post.summary | strip_html | truncate: 50, "..." }}
+           {% if note.summary %}
+           {{ note.summary | strip_html | truncate: 50, "..." }}
            {% else %}
-           {{ post.excerpt | strip_html | truncate: 50, "..." }}
+           {{ note.excerpt | strip_html | truncate: 50, "..." }}
            {% endif %}
           </P>
         {% endif %}
