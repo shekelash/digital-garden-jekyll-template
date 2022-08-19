@@ -13,19 +13,24 @@ metaanotherthing:
     </time>
   </div>
 
-  <div id="notes-entry-container">
-    <content>
-      {{ content }}
-      <hr>
-      <li>
+  <ul class="tag-list">
       {% assign t = page.title | downcase %}
         {% for post in site.notes %}
           {% if post.tags contains t %}
           <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{post.title}}</a>
            <span>Last updated on {{ post.last_modified_at | date: "%B %-d, %Y" }}</span>
-          {% endif %}
-        {% endfor %}
-      </li>
+    <p>
+        <span class="summary">
+        {% if note.summary %}
+          {{ note.summary | strip_html | truncate: 50, "..." }}
+        {% else %}
+          {{ note.excerpt | strip_html | truncate: 50, "..." }}
+        {% endif %}
+       </span>
+    </P>
+  </li>
+{% endfor %}
+</ul>
 
     </content>
     <side style="font-size: 0.9em">
