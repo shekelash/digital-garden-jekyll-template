@@ -49,8 +49,3 @@ defaults:
     values:
       layout: "note"
       
-# algolia搜索
-algolia:
-  application_id: NPLNFIOGA9
-  index_name: jekyll
-  search_only_api_key: 004d32867d3eda8dd819a879c181d495
