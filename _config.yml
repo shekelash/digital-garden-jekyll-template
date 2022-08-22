@@ -23,7 +23,7 @@ embed_tweets: false
 
 # 'True' displays notes graph at bottom of each note
 show_notes_graph: false
-
+incremental: true
 permalink:           pretty
 relative_permalinks: false
 
