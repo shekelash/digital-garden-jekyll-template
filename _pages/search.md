@@ -10,10 +10,12 @@ permalink: /search
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
-    appId: 'S1CRTOZOXJ',
-    apiKey: 'f23313c502b33acf4544fb1afcbc374c',
-    siteId: '777455cf-95e4-4e36-96b8-dffb1428e7ae',
+    appId: 'JF08G8WUNK',
+    apiKey: 'b113a01ae9d39bb783055a5d4b01b701',
+    siteId: '0c6e6f1e-28a4-44fd-bf45-60e7113c4fb5',
     branch: 'master',
     selector: 'div#search',
   });
 </script>
+
+
