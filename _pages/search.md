@@ -13,7 +13,7 @@ permalink: /search
     appId: 'S1CRTOZOXJ',
     apiKey: 'f23313c502b33acf4544fb1afcbc374c',
     siteId: '777455cf-95e4-4e36-96b8-dffb1428e7ae',
-    branch: '',
+    branch: 'master',
     selector: 'div#search',
   });
 </script>
