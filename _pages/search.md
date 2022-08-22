@@ -11,8 +11,8 @@ permalink: /search
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: 'JF08G8WUNK', //切记填写正确
-    apiKey: 'b113a01ae9d39bb783055a5d4b01b701', //切记填写正确
-    siteId: '0c6e6f1e-28a4-44fd-bf45-60e7113c4fb5', //Search-Only API Key 切记填写正确 
+    apiKey: 'b113a01ae9d39bb783055a5d4b01b701', //Search-Only API Key 切记填写正确
+    siteId: '0c6e6f1e-28a4-44fd-bf45-60e7113c4fb5', // 切记填写正确 
     branch: 'master',
     selector: 'div#search',
     placeholder: 'Explore the site...', //搜索框的占位符
