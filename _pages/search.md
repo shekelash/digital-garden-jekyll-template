@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Search
-permalink: /searcha
+permalink: /search
 ---
 
 <div id="search-searchbar"></div>
