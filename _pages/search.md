@@ -4,7 +4,7 @@ title: Search
 permalink: /search
 ---
 
-<div id="search-searchbar"></div>
+<div id="search"></div>
 
 <div class="post-list" id="search-hits">
 </div>
