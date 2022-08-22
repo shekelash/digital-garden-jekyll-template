@@ -15,6 +15,9 @@ permalink: /search
     siteId: '0c6e6f1e-28a4-44fd-bf45-60e7113c4fb5',
     branch: 'master',
     selector: 'div#search',
+    placeholder: 'Explore the site...',
+    detached: false,
+    hitsPerPage: 10,
   });
 </script>
 
