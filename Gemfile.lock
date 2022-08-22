@@ -10,6 +10,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    jekyll-sitemap (1.4.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
@@ -77,6 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll-sitemap
   jekyll (~> 4.0)
   jekyll-last-modified-at!
   nokogiri
