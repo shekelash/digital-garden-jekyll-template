@@ -50,3 +50,8 @@ defaults:
     values:
       layout: "note"
       
+algolia:
+  application_id: JF08G8WUNK
+  index_name: ensof
+  search_only_api_key: b113a01ae9d39bb783055a5d4b01b701
+  
