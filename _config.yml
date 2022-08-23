@@ -57,3 +57,4 @@ algolia:
   files_to_exclude: 
    - _notes/your-first-note.md
    - _pages/archive.md
+   - _pages/index.md
