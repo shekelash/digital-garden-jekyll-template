@@ -54,4 +54,5 @@ algolia:
   application_id: JF08G8WUNK
   index_name: ensof
   search_only_api_key: b113a01ae9d39bb783055a5d4b01b701
-  
+  files_to_exclude: 
+   - _notes/your-first-note.md
