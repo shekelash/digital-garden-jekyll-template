@@ -12,6 +12,8 @@ permalink: /archive
 </div>
 {% include algolia.html %}
 
+---
+
 ## 归档
 <ul class="archive">
 {% for note in site.notes %}
