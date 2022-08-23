@@ -3,14 +3,15 @@ layout: page
 title: Archive
 permalink: /archive
 ---
-# archive
 
+## 搜索
 <div id="search-searchbar"></div>
 
 <div class="post-list" id="search-hits">
 </div>
 {% include algolia.html %}
 
+## 归档
 <ul class="archive">
 {% for note in site.notes %}
   <li>
