@@ -51,9 +51,9 @@ defaults:
       layout: "note"
       
 algolia:
-  application_id: JF08G8WUNK
-  index_name: ensof
-  search_only_api_key: b113a01ae9d39bb783055a5d4b01b701
+  application_id: WBMOGO3ZD7
+  index_name: ensof-search
+  search_only_api_key: 49488e61407cacad971c583c8f9f9d7d
   files_to_exclude: 
    - _notes/your-first-note.md
    - _pages/archive.md
