@@ -37,12 +37,12 @@ const hitTemplate = function(hit) {
   const content = hit._highlightResult.html.value;
 
   return `
-    <div class="post-item">
+    <ul class="archive">
       <span class="post-meta">${date}</span>
       <h2><a class="internal-link" href="${url}">${title}</a></h2>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
-    </div>
+    </ul>
   `;
 }
 
