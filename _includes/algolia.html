@@ -38,10 +38,12 @@ const hitTemplate = function(hit) {
 
   return `
     <ul class="archive">
-      <span class="post-meta">${date}</span>
+      <li>
       <a class="internal-link" href="${url}">${title}</a>
+      <span>({{ note.last_modified_at | date: "%B %Y" }})</span>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
+      <li>
     </ul>
   `;
 }
