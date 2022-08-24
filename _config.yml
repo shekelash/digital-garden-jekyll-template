@@ -55,7 +55,6 @@ algolia:
   index_name: ensof-search
   search_only_api_key: b6defb6c35ff1ce895c0676713da9926
   files_to_exclude: 
-   [_page]
    - _notes/your-first-note.md
    - _pages/archive.md
    - _pages/index.md
