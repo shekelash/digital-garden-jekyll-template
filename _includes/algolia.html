@@ -39,7 +39,7 @@ const hitTemplate = function(hit) {
   return `
     <div class="post-item">
       <span class="post-meta">${date}</span>
-      <h2><a class="post-link" href="${url}">${title}</a></h2>
+      <h2><a class="internal-link" href="${url}">${title}</a></h2>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
     </div>
@@ -85,7 +85,7 @@ search.start();
 }
 .post-breadcrumbs {
   color: #424242;
-  display: block;
+  display: none;
 }
 .post-breadcrumb {
   font-weight: bold;
