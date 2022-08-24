@@ -4,6 +4,12 @@ title: Archive
 permalink: /archive
 ---
 
+<style>
+  .wrapper {
+    max-width: 46em;
+  }
+</style>
+
 <div id="search-searchbar"></div>
 
 <div class="post-list" id="search-hits">
