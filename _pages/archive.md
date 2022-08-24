@@ -10,7 +10,7 @@ permalink: /archive
 </div>
 {% include algolia.html %}
 
----
+<h1>{{tittle}}</h1>
 
 <ul class="archive">
 {% for note in site.notes %}
