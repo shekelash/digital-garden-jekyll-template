@@ -4,8 +4,6 @@ title: Archive
 permalink: /archive
 ---
 
-## 搜索
-<br/>
 <div id="search-searchbar"></div>
 
 <div class="post-list" id="search-hits">
@@ -14,7 +12,6 @@ permalink: /archive
 
 ---
 
-## 归档
 <ul class="archive">
 {% for note in site.notes %}
   <li>
