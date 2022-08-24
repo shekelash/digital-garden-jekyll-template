@@ -39,7 +39,7 @@ const hitTemplate = function(hit) {
   return `
     <ul class="archive">
       <li>
-      <a href="${url}">${title}</a>
+      <a href="${url}"><b>${title}</b></a>
       <span>${date}</span>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
