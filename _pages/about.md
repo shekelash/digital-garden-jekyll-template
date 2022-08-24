@@ -22,3 +22,5 @@ permalink: /about
 双链笔记软件 [Obsidian](https://obsidian.md/) 。
 <br>
 Jekyll发布方案由 [Maxime Vaillancourt](https://digital-garden-jekyll-template.netlify.app) 提供，部分模板代码参考自 [Megumi Tanaka](https://garden.megu.space/) 。
+<br>
+尤其感谢[Pathsis](https://github.com/Pathsis/tactile-advanced-template-with-algolia)的搜索教程并帮忙测试！
