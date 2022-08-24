@@ -39,7 +39,7 @@ const hitTemplate = function(hit) {
   return `
     <ul class="archive">
       <li>
-      <a href="${url}">${title}</a>
+      <a class="internal-link" href="${url}">${title}</a>
       <span>${date}</span>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
@@ -98,10 +98,6 @@ search.start();
   font-weight: bold;
   font-style: normal;
   color: #2a7ae2;
-}
- .post-snippet {
-   font-size: 0.8em;
-   padding-left: 3em;
 }
  .post-snippet .ais-Highlight {
   font-style: normal;
