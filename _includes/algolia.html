@@ -20,7 +20,7 @@ const search = instantsearch({
 const hitTemplate = function(hit) {
   let date = '';
   if (hit.date) {
-    date = moment.unix(hit.date).format('Y-M-D');
+    date = moment.unix(hit.date).format('MMM, DD YYYY');
   }
 
   let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
@@ -40,7 +40,7 @@ const hitTemplate = function(hit) {
     <ul class="archive">
       <li>
       <a class="internal-link" href="${url}">${title}</a>
-      <span>({{ note.last_modified_at | date: "%B %Y" }})</span>
+      <span>${date}</span>
       {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
       <div class="post-snippet">${content}</div>
       <li>
