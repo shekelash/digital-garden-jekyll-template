@@ -57,3 +57,7 @@ algolia:
   files_to_exclude: 
    - _notes/your-first-note.md
    - _pages/*.md
+
+#Pagination
+paginate: 3
+paginate_path: "/page:num/"
