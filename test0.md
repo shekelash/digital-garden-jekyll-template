@@ -30,7 +30,7 @@ permalink: /test0
 
 
 <div class = "paginator">
-    {% if paginator.total_pages > 5 %}
+    {% if paginator.total_pages > 1 %}
     {% if paginator.next_page %}
       <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
     {% endif %}
